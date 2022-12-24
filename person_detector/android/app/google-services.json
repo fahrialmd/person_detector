@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "277422856675",
+    "firebase_url": "https://esp32-test-9f190-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "esp32-test-9f190",
+    "storage_bucket": "esp32-test-9f190.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:277422856675:android:d4f4282e01bc96a28168d6",
+        "android_client_info": {
+          "package_name": "com.example.person_detector"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "277422856675-qhjikh2bvskqnrbq56t0d0p3n5neasr9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUmii0dPHTeFAFYNYwsap5CdaZ6zhyZ04"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "277422856675-qhjikh2bvskqnrbq56t0d0p3n5neasr9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "277422856675-ps5s61iseh0ijn68thu15f45d0j8s7hp.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.persenDetectorFlutter"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
