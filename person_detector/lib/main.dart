@@ -1,7 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
-import 'package:person_detector/screens/fetch_data.dart';
-import 'package:person_detector/screens/insert_data.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -37,6 +36,16 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  Future<void> readSensorValues() async {
+    DatabaseReference ref = FirebaseDatabase.instance.ref('ESP32/distanceCM');
+    ref.onValue.listen((DatabaseEvent event) {
+      final data = event.snapshot.value;
+      setState(() {
+        data;
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,54 +56,12 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            const Image(
-              width: 300,
-              height: 300,
-              image: NetworkImage(
-                  'https://seeklogo.com/images/F/firebase-logo-402F407EE0-seeklogo.com.png'),
+          children: [
+            ElevatedButton(
+              onPressed: readSensorValues,
+              child: Text("$readSensorValues"),
             ),
-            const SizedBox(
-              height: 30,
-            ),
-            const Text(
-              'Firebase Realtime Database Series in Flutter 2022',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.w500,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            MaterialButton(
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const InsertData()));
-              },
-              color: Colors.blue,
-              textColor: Colors.white,
-              minWidth: 300,
-              height: 40,
-              child: const Text('Insert Data'),
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            MaterialButton(
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const FetchData()));
-              },
-              color: Colors.blue,
-              textColor: Colors.white,
-              minWidth: 300,
-              height: 40,
-              child: const Text('Fetch Data'),
-            ),
+            Text("$readSensorValues")
           ],
         ),
       ),
