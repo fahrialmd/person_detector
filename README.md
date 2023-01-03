@@ -37,3 +37,7 @@ The Person Detector is an IoT Project that detects whether there are people pass
 1. Programing fundamentals.
 2. Arduino IDE.
 3. Flutter framework.
+4. Android studio and android virtual device.
+5. Firebase project.
+
+## Project Preview
